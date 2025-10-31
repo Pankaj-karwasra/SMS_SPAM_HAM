@@ -39,7 +39,3 @@ spam_classifier_project/
 
 
 
-
-conda deactivate
-conda create -n spam_project
-conda activate spam_project
