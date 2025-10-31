@@ -1,0 +1,21 @@
+<!-- frontend/public/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMS Spam Classifier</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>SMS Spam Classifier</h1>
+        <p>Enter an SMS message to classify it as Ham or Spam.</p>
+        <textarea id="smsInput" placeholder="Enter your SMS message here... (e.g., 'Free entry to a contest! Reply YES to win.')" rows="5"></textarea>
+        <button id="classifyBtn">Classify Message</button>
+        <div id="result" class="result"></div>
+        <p class="note">All predictions are logged to the backend database.</p>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+fastapi
+uvicorn
+scikit-learn
+pandas
+numpy
+nltk
+pydantic
+pydantic-settings
+SQLAlchemy
+python-dotenv
+matplotlib
+seaborn

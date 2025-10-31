@@ -1,0 +1,45 @@
+spam_classifier_project/
+├── .env                       # Environment variables (DB_URL, MODEL_PATHS, etc.)
+├── README.md                  # Project description, setup, usage
+├── requirements.txt           # Python dependencies
+├── backend/                   # FastAPI application (our ML API)
+│   ├── main.py                # FastAPI app entry point, defines endpoints
+│   ├── models/                # Pydantic models for API request/response validation
+│   │   ├── __init__.py
+│   │   └── prediction_models.py # Defines input (SMSMessage) and output (PredictionResult)
+│   ├── services/              # Business logic, ML pipeline orchestration
+│   │   ├── __init__.py
+│   │   ├── ml_pipeline.py     # Encapsulates preprocessing, vectorization, prediction
+│   │   └── db_service.py      # Handles database operations (saving predictions)
+│   ├── core/                  # Core utilities and settings
+│   │   ├── __init__.py
+│   │   ├── config.py          # Loads settings from .env
+│   │   └── exceptions.py      # Custom exceptions
+│   ├── data/                  # Raw data for training (optional, often external)
+│   │   └── SMSSpamCollection
+│   ├── repository/            # Database interaction layer (DAO pattern)
+│   │   ├── __init__.py
+│   │   └── prediction_repo.py # Manages CRUD operations for predictions
+│   └── database/              # Database setup (e.g., SQLAlchemy engine/session)
+│       ├── __init__.py
+│       └── connection.py      # Database engine and session setup
+├── ml_artifacts/              # Directory to store trained models and vectorizers
+│   ├── tfidf_vectorizer.pkl   # Our trained TF-IDF vectorizer
+│   └── mnb_model.pkl          # Our trained Naive Bayes model
+├── scripts/                   # Scripts for MLOps/DevOps tasks
+│   ├── train_model.py         # Script to train and save ML artifacts
+│   ├── db_init.py             # Script to initialize/migrate database schema
+│   └── deploy.sh              # Example deployment script
+└── frontend/                  # Web application (e.g., using HTML/JS, React, Vue)
+    ├── public/
+    │   ├── index.html         # Main HTML page
+    │   └── style.css          # CSS for styling
+    └── src/
+        └── app.js             # JavaScript for interacting with the backend API
+
+
+
+
+conda deactivate
+conda create -n spam_project
+conda activate spam_project
